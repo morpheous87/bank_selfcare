@@ -1,5 +1,0 @@
-CREATE TABLE card_type(
-   id INT NOT NULL AUTO_INCREMENT,
-   card_type VARCHAR(50),
-   PRIMARY KEY ( id )
-);
