@@ -1,0 +1,13 @@
+CREATE TABLE card(
+   id INT NOT NULL AUTO_INCREMENT,
+   type_id INT,
+   number VARCHAR(50),
+   user_id INT,
+   expire DATE,
+   disabled TINYINT(1),
+   PRIMARY KEY ( id ),
+   CONSTRAINT fk_UserCard FOREIGN KEY (user_id)
+	REFERENCES user(id),
+	CONSTRAINT fk_TypeCard FOREIGN KEY (type_id)
+	REFERENCES card_type	(id)
+);

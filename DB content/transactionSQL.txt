@@ -1,0 +1,15 @@
+CREATE TABLE transaction(
+   id INT NOT NULL AUTO_INCREMENT,
+   type_id INT,
+   receiver VARCHAR(50),
+   sender VARCHAR(50),
+   user_id INT,
+   timestamp DATE,
+   amount Decimal(10,2),
+   tax Decimal(10,2),
+   PRIMARY KEY ( id ),
+   CONSTRAINT fk_UserTransaction FOREIGN KEY (user_id)
+	REFERENCES user(id),
+	CONSTRAINT fk_TypeTransaction FOREIGN KEY (type_id)
+	REFERENCES transaction_type	(id)
+);

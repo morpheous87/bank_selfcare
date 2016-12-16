@@ -1,0 +1,2 @@
+INSERT INTO user (first_name, last_name, username, password, role_id, disabled, address, balance, salary)
+VALUES ("Petar", "Petrov", "ppetrov", "pass", 1, 0, "Pernik", 100, 460);
