@@ -1,0 +1,5 @@
+CREATE TABLE transaction_type(
+   id INT NOT NULL AUTO_INCREMENT,
+   transaction_type VARCHAR(50),
+   PRIMARY KEY ( id )
+);
