@@ -3,9 +3,19 @@
         <div class="row">
             <div id="main" class="col-sm-9">
                 <div>
-                    <span th:text="${user.email}"></span>
+                    <b>Email: </b><span th:text="${user.email}"></span>
                     <br/>
-                    <span th:text="${user.fullName}"></span>
+                    Address: <span th:text="${user.address}"></span>
+                    <br/>
+                    Name: <span th:text="${user.fullName}"></span>
+                    <br/>
+                    Disabled: <span th:text="${user.disabled}"></span>
+                    <br/>
+                    Salary: <span th:text="${user.salary}"></span>
+                    <br/>
+                    Balance: <span th:text="${user.balance}"></span>
+                    <br/>
+                   Username: <span th:text="${user.userName}"></span>
                 </div>
             </div>
         </div>

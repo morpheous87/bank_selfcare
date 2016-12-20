@@ -34,7 +34,7 @@ public class BankUserDetailsService implements UserDetailsService{
         else {
             Set<GrantedAuthority> grantedAuthorities = user.getRoles()
                     .stream()
-                    .map(role -> new SimpleGrantedAuthority(role.getRole_name()))
+                    .map(role -> new SimpleGrantedAuthority(role.getName()))
                     .collect(Collectors.toSet());
 
                     return  new org

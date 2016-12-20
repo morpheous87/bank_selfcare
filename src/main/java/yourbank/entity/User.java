@@ -1,6 +1,7 @@
 package yourbank.entity;
 
 import javax.persistence.*;
+import java.text.DecimalFormat;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -23,22 +24,28 @@ public class User {
     private Double balance;
     private Double salary;
 
-    public User(String fullName, String email, String userName) {
-        this.id = id;
+    public User() {
+    System.out.println(" KOOOOOOOORRRRR");
+    }
+
+    public User(String fullName, String email, String password) {
+        this.fullName = fullName;
+        this.email = email;
+        this.password = password;
+        this.roles = new HashSet<>();
+     //   this.transactions = new HashSet<>();
+    }
+
+    public User(String address, String fullName, String email, String userName, String password, Double balance, Double salary, Boolean disabled) {
         this.fullName = fullName;
         this.email = email;
         this.userName = userName;
         this.password = password;
-        this.role_id = role_id;
         this.disabled = disabled;
         this.address = address;
         this.balance = balance;
         this.salary = salary;
-
-        this.roles = new HashSet<>();
     }
-
-    public User(String userEmail, String name, String email, String fullName, String password, Double balance, Double salary) {}
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -49,7 +56,7 @@ public class User {
     public void setId(Integer id) {
         this.id = id;
     }
-    @Column(name = "fullName", nullable = false)
+    @Column(name = "full_name", nullable = false)
     public String getFullName() {
         return fullName;
     }
@@ -67,7 +74,7 @@ public class User {
         this.email = email;
     }
 
-    @Column(name = "userName", unique = true, nullable = false)
+    @Column(name = "user_name", unique = true, nullable = false)
     public String getUserName() {
         return userName;
     }
@@ -150,4 +157,12 @@ public class User {
     public void addRole(Role role){
         this.roles.add(role);
     }
+    ///////////////////////
+/*
+    private Set<Transaction> transactions;
+
+    @OneToMany(mappedBy = "user_id") //Really not sure what i doing :D
+    public Set<Transaction> getTransactions() {return transactions;}
+
+    public void setTransactions(Set<Transaction> transactions) {this.transactions = transactions;}  */
 }

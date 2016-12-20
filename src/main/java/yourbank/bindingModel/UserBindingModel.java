@@ -14,7 +14,7 @@ public class UserBindingModel {
     @NotNull
     private String password;
     @NotNull
-    private String confirmPassowrd;
+    private String confirmPassword;
 
     public String getEmail() {
         return email;
@@ -40,11 +40,11 @@ public class UserBindingModel {
         this.password = password;
     }
 
-    public String getConfirmPassowrd() {
-        return confirmPassowrd;
+    public String getConfirmPassword() {
+        return confirmPassword;
     }
 
-    public void setConfirmPassowrd(String confirmPassowrd) {
-        this.confirmPassowrd = confirmPassowrd;
+    public void setConfirmPassword(String confirmPassword) {
+        this.confirmPassword = confirmPassword;
     }
 }

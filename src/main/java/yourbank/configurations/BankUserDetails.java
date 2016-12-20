@@ -20,9 +20,9 @@ public class BankUserDetails extends User implements UserDetails{
 
     // may be added more params than need it in super method
     public BankUserDetails(User user, ArrayList<String> roles) {
-        super(user.getEmail(), user.getFullName(), user.getPassword(), user.getUserName(),
-                user.getAddress(), user.getBalance(), user.getSalary());
-
+        super(user.getAddress(), user.getFullName(), user.getEmail(), user.getUserName(),
+                user.getPassword(), user.getBalance(), user.getSalary(), user.getDisabled());
+//String address, String fullName, String email, String userName, String password, Double balance, Double salary, Boolean disabled
         this.roles = roles;
         this.user = user;
 

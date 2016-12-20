@@ -13,7 +13,7 @@ import java.util.Set;
 public class Role {
 
     private Integer id;
-    private String role_name;
+    private String name;
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,12 +26,12 @@ public class Role {
     }
 
     @Column(name = "role_name", nullable = false)
-    public String getRole_name() {
-        return role_name;
+    public String getName() {
+        return name;
     }
 
-    public void setRole_name(String role_name) {
-        this.role_name = role_name;
+    public void setName(String name) {
+        this.name = name;
     }
 
     private Set<User> users;

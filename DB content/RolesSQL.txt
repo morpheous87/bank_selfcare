@@ -1,5 +1,0 @@
-CREATE TABLE roles(
-   id INT NOT NULL AUTO_INCREMENT,
-   role_name VARCHAR(50),
-   PRIMARY KEY ( id )
-);

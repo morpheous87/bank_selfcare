@@ -45,18 +45,18 @@ public class UserController {
     @PostMapping("/register")
     public String registerProcess(UserBindingModel userBindingModel){
 
-        if (!userBindingModel.getPassword().equals(userBindingModel.getConfirmPassowrd())){
+        if (!userBindingModel.getPassword().equals(userBindingModel.getConfirmPassword())){
             return "redirect:/register";
         }
 
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
 
         User user = new User(
-                userBindingModel.getEmail(),
                 userBindingModel.getFullName(),
+                userBindingModel.getEmail(),
                 bCryptPasswordEncoder.encode(userBindingModel.getPassword()));
 
-        Role userRole = this.roleRepository.findByName("ROLE_USER");
+        Role userRole = this.roleRepository.findByName("user");
         user.addRole(userRole);
         this.userRepository.saveAndFlush(user);
         return "redirect:/login";
